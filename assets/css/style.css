@@ -63,6 +63,23 @@ html {
   width: 42%;
 }
 
+.battle-arena {
+  grid-row: 3;
+  grid-column: 3;
+}
+
+#your-avatar {
+  grid-row: 3;
+  grid-column: 3;
+  width: 42%
+}
+
+#defender-avatar {
+  grid-row: 3;
+  grid-column: 3;
+  width: 42%
+}
+
 #attack-button {
   background-color: #cfcfcf;
   border: 2px solid #910000;
@@ -94,23 +111,6 @@ button:focus {
   outline: none;
 }
 
-.battle-arena {
-  grid-row: 3;
-  grid-column: 3;
-}
-
-#your-avatar {
-  grid-row: 3;
-  grid-column: 3;
-  width: 42%
-}
-
-#defender-avatar {
-  grid-row: 3;
-  grid-column: 3;
-  width: 42%
-}
-
 #your-enemies-label {
   text-align: center;
   grid-row: 2;
@@ -124,23 +124,13 @@ button:focus {
   grid-column: 4;
 }
 
-.main-container {
-  grid-template-columns: 1fr repeat(4, 200px) 1fr;
-  grid-column: 3;
-  grid-gap: 10px;
-  grid-row: 5;
-  margin: auto;
-  padding: 20px;
-  /* box-shadow: 0 0 30px #fff; */
-}
-
-.main-container h2 {
-  font-size: 2em;
-  grid-row: 1;
-  grid-column: 1 / 6;
-  padding: 0 0 10px 0;
-  text-align: center;
-  text-shadow: 0 0 5px #000;
+.img-hover {
+  background-color: #181818;
+  border: none;
+  border-radius: 10px;
+  margin: 6px auto;
+  /* padding: 6px 12px; */
+  /* box-shadow: 0 0 10px #fff; */
 }
 
 .chosen-enemy h3,
@@ -189,21 +179,31 @@ button:focus {
   outline: none;
 }
 
+.main-container {
+  grid-template-columns: 1fr repeat(4, 200px) 1fr;
+  grid-column: 3;
+  grid-gap: 10px;
+  grid-row: 5;
+  margin: auto;
+  padding: 20px;
+  /* box-shadow: 0 0 30px #fff; */
+}
+
+.main-container h2 {
+  font-size: 2em;
+  grid-row: 1;
+  grid-column: 1 / 6;
+  padding: 0 0 10px 0;
+  text-align: center;
+  text-shadow: 0 0 5px #000;
+}
+
 .img-box {
   background-color: #181818;
   border: none;
   border-radius: 10px;
   margin: auto;
   padding: 6px 30px;
-  /* box-shadow: 0 0 10px #fff; */
-}
-
-.img-hover {
-  background-color: #181818;
-  border: none;
-  border-radius: 10px;
-  margin: 6px auto;
-  /* padding: 6px 12px; */
   /* box-shadow: 0 0 10px #fff; */
 }
 .choose-enemy,
@@ -254,12 +254,6 @@ button:focus {
   grid-column: 5;
 }
 
-
-
-
-
-
-
 .footer {
   color: #111;
   font-size: .9em;
@@ -287,4 +281,10 @@ button:focus {
   0% { opacity: 0; }
   30% { opacity: 0; }
   100% { opacity: .8; }
+}
+
+@keyframes opac { 
+  0% { opacity:.2; }
+  50% { opacity: 1; }
+  100% { opacity:.2; }
 }
