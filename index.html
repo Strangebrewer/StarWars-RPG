@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,96 @@
   <title>Star Wars RPG</title>
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron|Titillium+Web" rel="stylesheet">
 </head>
+
 <body>
-  
+
+  <div class="grid big-container">
+    <div class="header">
+      <header>
+        <h1>Star Wars RPG</h1>
+      </header>
+    </div>
+
+    <div class="flex battle-arena-labels">
+      <div id="your-avatar-label"></div>
+      <div id="versus"></div>
+      <div id="defender-avatar-label"></div>
+    </div>
+
+
+
+
+    <div class="flex battle-arena">
+      <div id="your-avatar"></div>
+      <button id="attack-button">Attack!</button>
+      <div id="defender-avatar"></div>
+    </div>
+
+
+
+    <div id="your-enemies-label"></div>
+
+
+
+
+    <div class="flex enemies">
+        <div class="img-hover" id="enemy-one"></div>
+        <div class="img-hover" id="enemy-two"></div>
+        <div class="img-hover" id="enemy-three"></div>
+    </div>
+
+
+
+
+    <div class="grid main-container">
+
+      <h2 id="choose-header">Choose Your Character</h2>
+
+      <div class="img-box img-one">
+        <button class="choose-avatar" id="choose-player-one">
+          <h3>Darth Vader</h3>
+          <img src="assets/images/vader.jpg" alt="darth vader">
+          <h4>Health: 250</h4>
+        </button>
+      </div>
+
+      <div class="img-box img-two">
+        <button class="choose-avatar" id="choose-player-two">
+          <h3>Obi Wan Kenobi</h3>
+          <img src="assets/images/obi-wan.jpg" alt="obi wan kenobi">
+          <h4>Health: 200</h4>
+        </button>
+      </div>
+
+      <div class="img-box img-three">
+        <button class="choose-avatar" id="choose-player-three">
+          <h3>Luke Skywalker</h3>
+          <img src="assets/images/luke.jpg" alt="luke skywalker">
+          <h4>Health: 180</h4>
+        </button>
+      </div>
+
+      <div class="img-box img-four">
+        <button class="choose-avatar" id="choose-player-four">
+          <h3>a Porg</h3>
+          <img src="assets/images/porg.jpg" alt="porg">
+          <h4>Health: 140</h4>
+        </button>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <footer>
+        &#9400;Copyright 2018 Keith Allmon
+      </footer>
+    </div>
+
+  </div>
   <script src="assets/js/jquery-3.3.1.js"></script>
   <script src="assets/js/game.js"></script>
 </body>
+
 </html>
