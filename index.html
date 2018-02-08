@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Star Wars RPG</title>
+  <title>RPG</title>
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Orbitron|Titillium+Web" rel="stylesheet">
@@ -17,63 +17,57 @@
 
     <div class="header">
       <header>
-        <h1>Star Wars RPG</h1>
+        <h1 class="main-heading">Star Wars RPG</h1>
       </header>
     </div>
 
-    <div class="flex battle-arena-labels">
-      <div id="your-avatar-label"></div>
-      <div id="versus"></div>
-      <div id="defender-avatar-label"></div>
-    </div>
+    <div class="grid content-container">
 
-    <div class="flex battle-arena">
-      <div id="your-avatar"></div>
       <button id="attack-button">Attack!</button>
-      <div id="defender-avatar"></div>
-    </div>
+      <button id="reset-button">Restart</button>
+      <button id="play-again-button">Play Again</button>
 
-    <div id="your-enemies-label"></div>
+      <h2 id="choose-avatar-heading">Choose Your Character</h2>
 
-    <div class="flex enemies">
-      <div class="img-hover" id="enemy-one"></div>
-      <div class="img-hover" id="enemy-two"></div>
-      <div class="img-hover" id="enemy-three"></div>
-    </div>
+      <h5 id="your-character-label">Your Character</h5>
+      <h6 id="versus">vs.</h6>
+      <h5 id="defender-label">Defender</h5>
 
-    <div class="grid main-container">
+      <p id="howard-cosell"></p>
+      <p id="howard-cosell-two"></p>
 
-      <h2 id="choose-header">Choose Your Character</h2>
+      <h5 id="graveyard-label">Cemetery</h5>
 
-      <div class="img-box img-one">
-        <button class="choose-avatar" id="choose-player-one">
+      <!-- all avatar boxes will get the class "avatar-box"  and an id of "avatar-one" (two, three, etc.) for moving it around. onClicks should be hooked to the button rather than the div because buttons can be disabled -->
+      <div class="avatar-box" id="avatar-one">
+        <button class="avatar" id="player-one">
           <h3>Darth Vader</h3>
           <img src="assets/images/vader.jpg" alt="darth vader">
-          <h4>Health: 250</h4>
+          <h4 id="vader-health">Health: 213</h4>
         </button>
       </div>
 
-      <div class="img-box img-two">
-        <button class="choose-avatar" id="choose-player-two">
-          <h3>Obi Wan Kenobi</h3>
-          <img src="assets/images/obi-wan.jpg" alt="obi wan kenobi">
-          <h4>Health: 200</h4>
+      <div class="avatar-box" id="avatar-two">
+        <button class="avatar" id="player-two">
+          <h3>Obi-Wan Kenobi</h3>
+          <img src="assets/images/obi-wan.jpg" alt="obi-wan kenobi">
+          <h4 id="obiwan-health">Health: 187</h4>
         </button>
       </div>
 
-      <div class="img-box img-three">
-        <button class="choose-avatar" id="choose-player-three">
+      <div class="avatar-box" id="avatar-three">
+        <button class="avatar" id="player-three">
           <h3>Luke Skywalker</h3>
           <img src="assets/images/luke.jpg" alt="luke skywalker">
-          <h4>Health: 180</h4>
+          <h4 id="luke-health">Health: 230</h4>
         </button>
       </div>
 
-      <div class="img-box img-four">
-        <button class="choose-avatar" id="choose-player-four">
+      <div class="avatar-box" id="avatar-four">
+        <button class="avatar" id="player-four">
           <h3>a Porg</h3>
-          <img src="assets/images/porg.jpg" alt="porg">
-          <h4>Health: 140</h4>
+          <img src="assets/images/porg.jpg" alt="a porg">
+          <h4 id="porg-health">Health: 155</h4>
         </button>
       </div>
 
@@ -81,15 +75,23 @@
 
     <div class="footer">
       <footer>
-        &#9400;Copyright 2018 Keith Allmon
+        <p>&#9400;Copyright 2018 Keith Allmon</p>
       </footer>
     </div>
+
+    
+    <audio class="audio" id="theme-song" src="assets/audio/themeSong.mp3"></audio>
+
+    <audio class="audio" id="cantina-song" src="assets/audio/cantinaSong.mp3"></audio>
+
+    <audio class="audio" id="imperial-march" src="assets/audio/imperialMarch.mp3"></audio>
+
+    <audio class="audio" id="rebel-fleet" src="assets/audio/rebelFleet.mp3"></audio>
 
   </div>
 
   <script src="assets/js/jquery-3.3.1.js"></script>
   <script src="assets/js/game.js"></script>
-
 </body>
 
 </html>
