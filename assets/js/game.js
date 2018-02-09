@@ -1,5 +1,3 @@
-$(window).ready(function () {
-
   var songs = ["theme-song", "cantina-song", "imperial-march", "rebel-fleet"];
   var playerOneFlag = true;
   var playerTwoFlag = true;
@@ -7,6 +5,52 @@ $(window).ready(function () {
   var playerFourFlag = true;
   var defenderFlag = true;
   var countFlag = 0;
+
+  // CHARACTER OBJECTS
+  var vader = {
+    name: "Darth Vader"
+    , healthPoints: 213
+    , attackPower: 8
+    , counterAttackPower: 22
+    , healthId: "vader-health"
+    , divId: "avatar-one"
+    , defeatLocation: "7 / 2 / auto / auto"
+  }
+
+  var obiwan = {
+    name: "Obiwan Kenobi"
+    , healthPoints: 187
+    , attackPower: 9
+    , counterAttackPower: 19
+    , healthId: "obiwan-health"
+    , divId: "avatar-two"
+    , defeatLocation: "7 / 3 / auto / auto"
+  }
+
+  var luke = {
+    name: "Luke Skywalker"
+    , healthPoints: 230
+    , attackPower: 6
+    , counterAttackPower: 18
+    , healthId: "luke-health"
+    , divId: "avatar-three"
+    , defeatLocation: "7 / 4 / auto / auto"
+  }
+
+  var porg = {
+    name: "a Porg"
+    , healthPoints: 155
+    , attackPower: 11
+    , counterAttackPower: 26
+    , healthId: "porg-health"
+    , divId: "avatar-four"
+    , defeatLocation: "7 / 5 / auto / auto"
+  }
+
+  $("#vader-health").text("Health: " + vader.healthPoints);
+  $("#obiwan-health").text("Health: " + obiwan.healthPoints);
+  $("#luke-health").text("Health: " + luke.healthPoints);
+  $("#porg-health").text("Health: " + porg.healthPoints);
 
   function fadeOut(p1) {
     $(p1).css("animation", "fadeout 1.2s");
@@ -103,7 +147,7 @@ $(window).ready(function () {
   $("#player-two").on("click", function () {
     if (countFlag > 0 && playerTwoFlag && defenderFlag) {
       chooseDefender("#avatar-two");
-      playerTwo = obiwan
+      playerTwo = obiwan;
       currentTwoHealth = playerTwo.healthPoints;
       playerTwoFlag = false;
     } else if (playerTwoFlag && defenderFlag) {
@@ -231,7 +275,8 @@ $(window).ready(function () {
           $("#choose-avatar-heading").css("opacity", "1");
           $("#choose-avatar-heading").css("animation", "opac .8s");
           $("#choose-avatar-heading").css("animation-iteration-count", "infinite");
-        }, 3500);
+          defenderFlag = true;
+        }, 3000);
         setTimeout(function () {
           $("#choose-avatar-heading").css("animation", "fadeout2 .8s");
           $("#choose-avatar-heading").css("opacity", "0");
@@ -240,7 +285,6 @@ $(window).ready(function () {
           $("#" + playerTwo.divId + " img").css("box-shadow", "0 0 30px #029aff");
           fadeInDead("#" + playerTwo.divId);
           fadeIn("#graveyard-label");
-          defenderFlag = true;
         }, 2000);
       }
     }
@@ -268,8 +312,6 @@ $(window).ready(function () {
     attacks++;
   });
 
-
-
   $("#reset-button").on("click", function () {
     window.location.reload();
   })
@@ -277,46 +319,3 @@ $(window).ready(function () {
   $("#play-again-button").on("click", function () {
     window.location.reload();
   })
-
-  // CHARACTER OBJECTS
-  var vader = {
-    name: "Darth Vader"
-    , healthPoints: 213
-    , attackPower: 8
-    , counterAttackPower: 22
-    , healthId: "vader-health"
-    , divId: "avatar-one"
-    , defeatLocation: "7 / 2 / auto / auto"
-  }
-
-  var obiwan = {
-    name: "Obiwan Kenobi"
-    , healthPoints: 187
-    , attackPower: 9
-    , counterAttackPower: 19
-    , healthId: "obiwan-health"
-    , divId: "avatar-two"
-    , defeatLocation: "7 / 3 / auto / auto"
-  }
-
-  var luke = {
-    name: "Luke Skywalker"
-    , healthPoints: 230
-    , attackPower: 6
-    , counterAttackPower: 18
-    , healthId: "luke-health"
-    , divId: "avatar-three"
-    , defeatLocation: "7 / 4 / auto / auto"
-  }
-
-  var porg = {
-    name: "a Porg"
-    , healthPoints: 155
-    , attackPower: 11
-    , counterAttackPower: 26
-    , healthId: "porg-health"
-    , divId: "avatar-four"
-    , defeatLocation: "7 / 5 / auto / auto"
-  }
-
-});
